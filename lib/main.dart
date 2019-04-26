@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           // child: const Text('Hello World'),
-          child: Text(wordPair.asPascalCase),
+          // child: Text(wordPair.asPascalCase),
+          child: RandomWords(),
         ),
       ),
     );
@@ -23,7 +24,11 @@ class MyApp extends StatelessWidget {
 }
 
 class RandomWordsState extends State<RandomWords> {
-  // TODO
+  @override
+  Widget build(BuildContext context){
+    final WordPair wordPair = WordPair.random();
+    return Text(wordPair.asPascalCase);
+  }
 }
 
 class RandomWords extends StatefulWidget {
